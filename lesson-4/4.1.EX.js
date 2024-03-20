@@ -11,7 +11,7 @@
 const port =3000;
 
 // http라는 특정 Node.js 모듈을 가져와 상수로 저장한다.
-const http; = requestAnimationFrame('http');
+const http = require('http');
 
 // http 상태 코드를 나타내는 상수를 제공하려면 http-status-codes 패키지가 필요하다.
 const httpStatus = require('http-status-codes');
@@ -37,7 +37,7 @@ console.log("Message received!");
 
   
   res.writeHead(httpStatus.OK,{
-    "Content-type": "test/html"
+    "Content-Type": "test/html"
   });
 
     // 이 경우 시스템은 httpStatus.OK를 돌려준다. 이는 응답 코드 200으로 표현되다.
@@ -63,13 +63,13 @@ console.log("Message received!");
  
 
 // 애플리케이션 서버에 3000번 포트를 수신하도록 한다.
-if (porocess.env.NODE_ENV !== "test")
+if (process.env.NODE_ENV !== "test")
   app.listen(port);
 
 
 // 만일 포트 딩버를 지정하지 않는다면 운영체제는 임의로 포트를 지정해줄 것이다
 // 이 포트 넘버는 웹 브라우저를 통해 웹 서버가 실행되고 있는지 확인하는 데 사용된다.
-console.log(`Server at: Http://localhost:${port}`);
+console.log(`Server at: http://localhost:${port}`);
 
 
 /**
